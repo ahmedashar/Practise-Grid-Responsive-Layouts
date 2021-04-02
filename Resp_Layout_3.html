@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Resp Layout Practise</title>
+    <style>
+        :root {
+            --main-radius: 12px;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 0.2fr 1fr;
+            grid-template-rows: 0.3fr 1fr 0.4fr 0.3fr;
+            grid-template-areas: "header header"
+                "side-1 section"
+                "side-2 section"
+                "footer footer";
+            grid-gap: 0.4rem;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+        header {
+            background-color: black;
+            grid-area: header;
+            border-radius: var(--main-radius);
+        }
+        #side-1 {
+            background-color: orange;
+            grid-area: side-1;
+            border-radius: var(--main-radius);
+        }
+        #side-2 {
+            background-color: burlywood;
+            grid-area: side-2;
+            border-radius: var(--main-radius);
+        }
+        section {
+            background-color: skyblue;
+            grid-area: section;
+            border-radius: var(--main-radius);
+        }
+
+        footer {
+            background-color: rgb(35, 56, 83);
+            grid-area: footer;
+            border-radius: var(--main-radius);
+        }
+        @media screen and (max-width:992px) and (min-width:768px) {
+            .container {
+                grid-template-columns: 0.25fr 0.75fr;
+                grid-template-rows: 0.2fr 0.6fr 0.2fr 0.2fr;
+                grid-template-areas: "header header"
+                    "section section"
+                    "side-2 side-1"
+                    "footer footer";
+
+            }
+        }
+        @media screen and (max-width:768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.2fr 0.6fr 0.2fr 0.2fr 0.2fr;
+                grid-template-areas: "header"
+                    "section"
+                    "side-1"
+                    "side-2"
+                    "footer";
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <aside id="side-1">Aside-1</aside>
+        <aside id="side-2">Aside-2</aside>
+        <section>Section</section>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

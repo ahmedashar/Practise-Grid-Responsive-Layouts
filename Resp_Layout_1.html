@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Practise Of Resp Layout</title>
+    <style>
+        .container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 4fr 1fr;
+            grid-template-rows: 0.3fr 0.2fr 1.2fr 0.3fr;
+           grid-template-areas: 
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer"
+           ;
+           text-align: center;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           color: white; 
+        }
+        header{
+            background-color: rgb(55, 96, 184);
+            grid-area: header;
+        }
+        nav{
+            background-color: rgb(30, 30, 126);
+            grid-area: nav;
+        }
+        main{
+            background-color: rgb(56, 154, 219);
+            grid-area: main;
+        }
+        aside{
+            background-color: rgb(51, 61, 150);
+            grid-area: aside;
+        }
+        footer{
+            background-color: skyblue;
+            grid-area: footer;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.2fr 0.8fr 0.17fr 0.3fr 0.2fr;
+                grid-template-areas: 
+                "header"
+                "main"
+                "nav"
+                "aside"
+                "footer";
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <aside>Aside</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

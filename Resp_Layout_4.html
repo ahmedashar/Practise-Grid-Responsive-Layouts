@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Responsive Layout Practise</title>
+    <style>
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+            grid-template-rows: 0.2fr 0.6fr 0.35fr 0.1fr 0.1fr;
+            grid-template-areas: "header menu menu menu"
+                "hero hero hero hero"
+                "main main . section"
+                "main main . section"
+                "banner banner banner banner"
+            ;
+            text-align: center;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-transform: uppercase;
+        }
+
+        header {
+            grid-area: header;
+            background-color: black;
+        }
+
+        #menu {
+            grid-area: menu;
+            background-color: red;
+        }
+
+        #hero {
+            grid-area: hero;
+            background-color: skyblue;
+        }
+
+        main {
+            background-color: rgb(34, 32, 32);
+            grid-area: main;
+        }
+
+        #img {
+            height: 50%;
+            background-color: rgb(174, 209, 223);
+        }
+
+        #extra {
+            height: 50%;
+            background-color: green;
+        }
+
+        #banner {
+            background-color: yellow;
+            grid-area: banner;
+        }
+
+        .section {
+            grid-area: section;
+        }
+
+        @media screen and (max-width:768px) {
+            .container {
+                grid-template-columns: 0.5fr 1fr;
+                grid-template-rows: 0.2fr 0.5fr 0.3fr 0.2fr 0.2fr;
+                grid-template-areas: "header header"
+                    "hero hero"
+                    "menu main"
+                    "menu banner"
+                    "menu section";
+            }
+
+            .section {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            #img {
+                height: 100%;
+                width: 30%;
+            }
+
+            #extra {
+                height: 100%;
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width:430px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.2fr 0.2fr 0.5fr 0.5fr 0.4fr 0.4fr 0.4fr;
+                grid-template-areas: "header"
+                    "menu"
+                    "hero"
+                    "main"
+                    "banner"
+                    "section"
+                    "section"
+                ;
+            }
+
+            .section {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            #img {
+                height: 100%;
+                width: 100%;
+            }
+
+            #extra {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <div id="menu">Menu</div>
+        <div id="hero">Hero</div>
+        <main>Main</main>
+        <div class="section">
+            <div id="img">image</div>
+            <div id="extra">Extra</div>
+        </div>
+        <div id="banner">Banner</div>
+    </div>
+</body>
+
+</html>
